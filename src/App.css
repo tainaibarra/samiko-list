@@ -1,0 +1,190 @@
+/* fuente */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* base */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: radial-gradient(circle at top, #f6eaff, #e0c3fc, #c2e9fb);
+  overflow-x: hidden;
+}
+
+/* fondo animado */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.4) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.2) 3px, transparent 3px);
+  background-size: 40px 40px, 80px 80px;
+  animation: floatBg 25s linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatBg {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-200px) translateX(-100px); }
+}
+
+/* contenedor */
+.container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  box-shadow:
+    0 15px 35px rgba(160, 120, 255, 0.25),
+    0 0 40px rgba(180, 140, 255, 0.3);
+}
+
+/* modo oscuro */
+.container.dark {
+  background: rgba(40,40,60,0.9);
+  color: white;
+}
+
+/* botón modo */
+.toggle-btn {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* avatar */
+.avatar {
+  font-size: 50px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-8px); }
+}
+
+/* título */
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #a88cff, #7bd3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* textos */
+.greeting {
+  color: #ff7aa2;
+}
+
+.subtitle {
+  color: #777;
+}
+
+.container.dark .subtitle {
+  color: #ccc;
+}
+
+/* formulario */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* input */
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 15px;
+  border: 2px solid #e5d9ff;
+  outline: none;
+  background: white;
+  color: #333;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* modo oscuro input */
+.container.dark input {
+  background: #2f2f4f;
+  color: white;
+  border-color: #666;
+}
+
+/* botones */
+button {
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(135deg, #a88cff, #7bd3ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(160, 120, 255, 0.6);
+}
+
+/* ⭐ FILTROS */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.filters button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  background: #eee;
+  color: #333;
+}
+
+.container.dark .filters button {
+  background: #444;
+  color: white;
+}
+
+/* tareas */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.container.dark .todo-item {
+  background: #3a3a5f;
+}
+
+/* tarea completada */
+.todo-item.done span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* botón eliminar */
+.delete-btn {
+  background: #ff7aa2;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
